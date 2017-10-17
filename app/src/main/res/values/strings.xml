@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Guessing Game Exercise</string>
+    <string name="restart_game">Restart Game</string>
+    <string name="placeholder_banner_ad">Placeholder Banner Ad</string>
 </resources>

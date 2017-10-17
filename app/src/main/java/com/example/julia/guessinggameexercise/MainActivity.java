@@ -1,12 +1,14 @@
 package com.example.julia.guessinggameexercise;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -83,6 +85,29 @@ public class MainActivity extends AppCompatActivity {
                     } else {
                         finish_game.setText(game_completion_comments.get(3) + num_guesses);
                     }
+
+                    ImageView banner_ad = (ImageView) findViewById(R.id.bannerAd);
+
+                    banner_ad.setOnClickListener(new View.OnClickListener() {
+                        //Banner onclick action to open webpage
+                        @Override
+                        public void onClick(View v) {
+                            //Banner ad URL
+                            String url = "http://www.doc.govt.nz/abeltasmantrack";
+
+                            // Setup intent as browser-view
+                            Intent intent_ad = new Intent();
+                            intent_ad.setAction(Intent.ACTION_VIEW);
+                            intent_ad.addCategory(Intent.CATEGORY_BROWSABLE);
+
+                            //Pass the URL to the intent
+                            intent_ad.setData(Uri.parse(url));
+
+                            // Start the intent activity
+                            startActivity(intent_ad);
+
+                        }
+                    });
 
                     Button restart = (Button) findViewById(R.id.button2);
                     restart.setOnClickListener(new View.OnClickListener() {
